@@ -16,7 +16,7 @@ const OurCompany = () => {
                         </h2>
                     </div>
 
-                    <div class="grid grid-cols-1 mt-8 md:mt-20 gap-y-6 md:grid-cols-2 gap-x-10">
+                    <div class="grid text-left grid-cols-1 mt-8 md:mt-20 gap-y-6 md:grid-cols-2 gap-x-10">
                         <div>
                             <img class="w-full mx-auto sm:max-w-xs" src="https://cdn.rareblocks.xyz/collection/celebration/images/team/2/business-man.jpg" alt="" />
                         </div>

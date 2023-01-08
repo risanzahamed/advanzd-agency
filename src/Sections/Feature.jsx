@@ -7,12 +7,12 @@ const Feature = () => {
             <div className="bg-gradient-to-r from-[#F7F5E5] to-[#f7f7f7]">
                 <section className="py-10 sm:py-16 lg:py-24">
                     <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
-                        <div className="grid items-center grid-cols-1 gap-12 lg:grid-cols-2">
+                        <div className="grid items-center text-left grid-cols-1 gap-12 lg:grid-cols-2">
                             <div>
                                 <img className="lg:w-[70%]" src="https://adventz.radiantthemes.com/wp-content/uploads/2022/06/freelance-girl.png" alt="" />
                             </div>
                             <div>
-                                <h1 className="text-4xl font-medium leading-tight text-gray-900 sm:text-5xl sm:leading-tight lg:leading-tight lg:text-4xl">
+                                <h1 className="text-4xl font-medium  leading-tight text-gray-900 sm:text-5xl sm:leading-tight lg:leading-tight lg:text-4xl">
                                     Get Support To Grow Your Online Business
 
                                 </h1>

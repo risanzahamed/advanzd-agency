@@ -3,6 +3,8 @@ import Login from "../Authentication/Login";
 import Register from "../Authentication/Register";
 import Landing from "../Landing";
 import Job from "../Pages/Job/Job";
+import SingleJobPost from "../Pages/Job/SingleJobPost";
+import SinglePostJobDeatails from "../Pages/Job/SinglePostJobDeatails";
 import OurCompany from "../Pages/OurCompany/OurCompany";
 import OurExperts from "../Pages/OurExperts/OurExperts";
 import PricingPlans from "../Pages/PricingPlans/PricingPlans";
@@ -33,7 +35,20 @@ const router = createBrowserRouter([
           path: "/jobs",
           element: <Job />,
         },
+        
+        {
+          path: "/jobs/:id",
+          element: <SingleJobPost></SingleJobPost>,
+          loader: ({ params }) => fetch(`http://localhost:8000/job-details/${params.id}`)
   
+        },
+        {
+          path: `/job/:id`,
+          element: <SinglePostJobDeatails></SinglePostJobDeatails>,
+          loader: ({ params }) => fetch(`http://localhost:8000/post/${params.id}`)
+  
+        },
+
         {
           path: '/login',
           element: <Login />

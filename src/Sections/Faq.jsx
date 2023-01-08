@@ -12,7 +12,7 @@ const Faq = () => {
                         <h2 className="mt-6 text-sm font-normal leading-tight text-black sm:text-4xl lg:text-base">Phasellus vulputate porttitor libero, lipsum rhoncus lipsum accumsan diam vulputate <br /> porttitor ullamcorper sollicitudin porttitor vitae.s</h2>
                     </div>
 
-                    <div className="grid items-center grid-cols-1 mt-12 gap-y-10 lg:grid-cols-5 sm:mt-20 gap-x-4">
+                    <div className="grid items-center text-left grid-cols-1 mt-12 gap-y-10 lg:grid-cols-5 sm:mt-20 gap-x-4">
                         <div className="space-y-8 lg:pr-16 xl:pr-24 lg:col-span-2 lg:space-y-12">
                             <div className="flex items-start">
                                 <svg className="flex-shrink-0 text-green-500 w-9 h-9" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
