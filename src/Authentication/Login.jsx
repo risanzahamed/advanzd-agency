@@ -57,7 +57,7 @@ const navigate = useNavigate()
                         <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent"></div>
 
                         <div className="relative">
-                            <div className="w-full max-w-xl xl:w-full xl:mx-auto xl:pr-24 xl:max-w-xl">
+                            <div className="w-full text-left max-w-xl xl:w-full xl:mx-auto xl:pr-24 xl:max-w-xl">
                                 <h3 className="text-4xl font-bold text-white">Join 35k+ web professionals & <br className="hidden xl:block" />build your website</h3>
                                 <ul className="grid grid-cols-1 mt-10 sm:grid-cols-2 gap-x-8 gap-y-4">
                                     <li className="flex items-center space-x-3">
@@ -97,7 +97,7 @@ const navigate = useNavigate()
                         </div>
                     </div>
 
-                    <div className="flex items-center justify-center px-4 py-10 bg-white sm:px-6 lg:px-8 sm:py-16 lg:py-24">
+                    <div className="flex text-left items-center justify-center px-4 py-10 bg-white sm:px-6 lg:px-8 sm:py-16 lg:py-24">
                         <div className="xl:w-full xl:max-w-sm 2xl:max-w-md xl:mx-auto">
                             <h2 className="text-3xl font-bold leading-tight text-black sm:text-4xl">Sign in to See Jobs</h2>
                             <p className="mt-2 text-base text-gray-600">Don’t have an account? <Link to="/register" title="" className="font-medium text-blue-600 transition-all duration-200 hover:text-blue-700 focus:text-blue-700 hover:underline">Create a free account</Link></p>
