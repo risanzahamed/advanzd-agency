@@ -20,14 +20,6 @@ const SinglePostJobDeatails = () => {
                                 <div class="h-full overflow-hidden aspect-w-3 aspect-h-4">
                                     <img class="object-cover scale-150 lg:origin-bottom-right" src="https://cdn.rareblocks.xyz/collection/celebration/images/features/2/woman-working-on-laptop.jpg" alt="" />
                                 </div>
-
-                                <div class="absolute inset-0 grid w-full h-full place-items-center">
-                                    <button type="button" class="inline-flex items-center justify-center w-12 h-12 text-blue-600 bg-white rounded-full shadow-md lg:w-20 lg:h-20">
-                                        <svg class="w-6 h-6 lg:w-8 lg:h-8" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                                            <path d="M8 6.82v10.36c0 .79.87 1.27 1.54.84l8.14-5.18c.62-.39.62-1.29 0-1.69L9.54 5.98C8.87 5.55 8 6.03 8 6.82z" />
-                                        </svg>
-                                    </button>
-                                </div>
                             </div>
 
                             <div class="absolute -translate-x-1/2 left-1/2 -top-16">

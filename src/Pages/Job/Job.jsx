@@ -7,7 +7,7 @@ const Job = () => {
     const [jobs, setJobs] = useState([])
 
     useEffect(() => {
-        fetch('http://localhost:8000/jobs-category')
+        fetch('https://advanzd-agency-server.vercel.app/jobs-category')
             .then(res => res.json())
             .then(data => {
                 setJobs(data)

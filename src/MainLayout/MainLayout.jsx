@@ -39,13 +39,13 @@ const router = createBrowserRouter([
         {
           path: "/jobs/:id",
           element: <SingleJobPost></SingleJobPost>,
-          loader: ({ params }) => fetch(`http://localhost:8000/job-details/${params.id}`)
+          loader: ({ params }) => fetch(`https://advanzd-agency-server.vercel.app/job-details/${params.id}`)
   
         },
         {
           path: `/job/:id`,
           element: <SinglePostJobDeatails></SinglePostJobDeatails>,
-          loader: ({ params }) => fetch(`http://localhost:8000/post/${params.id}`)
+          loader: ({ params }) => fetch(`https://advanzd-agency-server.vercel.app/post/${params.id}`)
   
         },
 
