@@ -9,7 +9,7 @@ const SinglePostJobDeatails = () => {
     return (
         <div>
             <section class="py-10 text-left bg-gray-50 sm:py-16 lg:py-24">
-                <div class="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
+                <div class="px-4 pt-36  mx-auto max-w-7xl sm:px-6 lg:px-8">
                     <div class="grid items-stretch gap-y-10 md:grid-cols-2 md:gap-x-20">
                         <div class="relative grid grid-cols-2 gap-6 mt-10 md:mt-0">
                             <div class="overflow-hidden aspect-w-3 aspect-h-4">

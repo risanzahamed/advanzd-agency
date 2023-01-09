@@ -9,7 +9,7 @@ const SingleJobPost = () => {
     return (
         <div>
 
-            <div class="bg-gradient-to-b from-[#101212] relative to-[#08201D]">
+            <div class="bg-gradient-to-b pt-36   from-[#101212] relative to-[#08201D]">
                 <section class="relative lg:min-h-[500px] pt-24 pb-10 sm:pt-32 sm:pb-16 lg:pb-24">
 
 
