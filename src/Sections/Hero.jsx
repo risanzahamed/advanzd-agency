@@ -2,10 +2,10 @@ import React from 'react';
 
 const Hero = () => {
     return (
-        <div className="bg-gradient-to-r from-[#F7F5E5] to-[#f7f7f7]">
+        <div className="bg-gradient-to-r  from-[#F7F5E5] to-[#f7f7f7]">
              <section className="pt-12 pb-12 sm:pb-16 lg:pt-8">
                 <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
-                    <div className="grid max-w-lg grid-cols-1 mx-auto lg:max-w-full lg:items-center lg:grid-cols-2 gap-y-12 lg:gap-x-16">
+                    <div className="grid pt-36 max-w-lg grid-cols-1 mx-auto lg:max-w-full lg:items-center lg:grid-cols-2 gap-y-12 lg:gap-x-16">
                         <div>
                             <div className="text-center lg:text-left">
                                 <h1 className="text-4xl font-medium leading-tight text-gray-900 sm:text-5xl sm:leading-tight lg:leading-tight lg:text-6xl">Hire <span className=' text-white pl-2 pr-2 m-0 bg-[#FB5850]'>Expert Team</span> For Best Business Development</h1>

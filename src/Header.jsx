@@ -1,10 +1,9 @@
-import React, { useContext } from 'react';
+import React, { useContext, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from './Context/AuthContext';
 
 const Header = () => {
-    
-    const {user, UserlogOut} = useContext(AuthContext)
+    const { user, UserlogOut } = useContext(AuthContext)
 
     const handleUserLogout = () => {
         UserlogOut()
@@ -12,51 +11,90 @@ const Header = () => {
             .catch(error => console.log(error))
     }
 
+    const [state, setState] = useState(false)
+    const navRef = useRef()
     return (
         <div>
-            <div className="py-4 md:py-6">
-                <div className="container px-4 mx-auto sm:px-6 lg:px-8">
-                    <div className="flex items-center justify-between">
-                        <div className="flex-shrink-0">
-                            <Link to="/" title="" className="flex rounded outline-none focus:ring-1 focus:ring-gray-900 focus:ring-offset-2">
-                                <img className="w-auto h-8" src="https://adventz.radiantthemes.com/wp-content/uploads/2022/06/donen1logo.svg" alt="" />
-                            </Link>
-                        </div>
+            <nav ref={navRef} className="bg-white fixed w-full z-20  px-4 mx-auto sm:px-6 lg:px-8">
+                <div className="items-center py-4 md:py-6 px-4 max-w-screen-2xl mx-auto lg:flex lg:px-8">
+                    <div className="flex items-center p-3 justify-between py-3 lg:py-4 lg:block">
+                        <Link to='/'>
+                            <img
+                                src="https://adventz.radiantthemes.com/wp-content/uploads/2022/06/donen1logo.svg"
 
-                        <div className="flex lg:hidden">
-                            <button type="button" className="text-gray-900">
-                                <svg className="w-7 h-7" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M4 6h16M4 12h16M4 18h16"></path>
-                                </svg>
+                                alt="Float UI logo"
+                            />
+                        </Link>
+                        <div className="lg:hidden">
+                            <button className="text-gray-700 p-3 outline-none  rounded-md focus:border-gray-400 focus:border"
+                                onClick={() => setState(!state)}
+                            >
+                                {
+                                    state ? (
+                                        <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" viewBox="0 0 20 20" fill="currentColor">
+                                            <path fillRule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clipRule="evenodd" />
+                                        </svg>
+                                    ) : (
+                                        <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 8h16M4 16h16" />
+                                        </svg>
+                                    )
+                                }
                             </button>
                         </div>
-
-                        <div className="hidden lg:flex lg:ml-10 xl:ml-16 lg:items-center lg:justify-center lg:space-x-8 xl:space-x-16">
-                            <Link to="/" title="" className="text-base font-medium text-gray-900 transition-all duration-200  font-pj hover:text-opacity-50 "> Home </Link>
-                            <Link to="/our-company" title="" className="text-base font-medium text-gray-900 transition-all duration-200  font-pj hover:text-opacity-50 "> Our Company </Link>
-
-                            <Link to="/our-experts" title="" className="text-base font-medium text-gray-900 transition-all duration-200  font-pj hover:text-opacity-50 "> Our Experts</Link>
-
-                            <Link to="/pricing-plans" title="" className="text-base font-medium text-gray-900 transition-all duration-200  font-pj hover:text-opacity-50 "> Pricing Plans </Link>
-                            {
-                                user?.uid ?  <Link to="/jobs" title="" className="text-base font-medium text-gray-900 transition-all duration-200  font-pj hover:text-opacity-50 "> Our Jobs </Link> : <>
-                                
-                                </>
-                            }
-                        </div>
-
-                        {
-                            user?.uid ? <button onClick={handleUserLogout} cursor-pointer className="px-5 py-2 text-base font-bold leading-7 text-white transition-all duration-200 bg-gray-900 border border-transparent rounded-xl hover:bg-gray-600 font-pj focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900">LogOut</button> : <>
-                                <div className="hidden lg:ml-auto lg:flex lg:items-center lg:space-x-8 xl:space-x-10">
-                                    <Link to="/login" title="" className="text-base font-medium text-gray-900 transition-all duration-200  font-pj hover:text-opacity-50 focus:ring-1 focus:ring-gray-900 focus:ring-offset-2"> Sign in</Link>
-                                    <Link to="/register" className="px-5 py-2 text-base font-bold leading-7 text-white transition-all duration-200 bg-gray-900 border border-transparent rounded-xl hover:bg-gray-600 font-pj focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900">Create free account</Link>
-                                </div>
-                            </>
-                        }
                     </div>
+                    <div className={`flex-1 justify-between flex-row-reverse lg:overflow-visible lg:flex lg:pb-0 lg:pr-0 lg:h-auto ${state ? 'h-screen pb-20 overflow-auto pr-4' : 'hidden'}`}>
+                        <div className='  '>
+                            <ul className="flex mx-auto  flex-col-reverse space-x-0 lg:space-x-6 lg:flex-row">
+                                {
+                                    user?.uid ?
+
+                                        <li className="mt-4  p-3 lg:mt-0">
+                                            <Link onClick={handleUserLogout} cursor-pointer className="py-3 px-4 text-center text-white bg-gray-900  rounded-xl hover:bg-gray-600  shadow block lg:inline">
+                                                LogOut
+                                            </Link>
+                                        </li> :
+                                        <>
+                                            <li className="mt-4 lg:p-3 lg:mt-0">
+                                                <Link to='/login' className="py-3 px-4 text-center border text-gray-600 rounded-xl hover:text-indigo-600 block lg:inline lg:border-0">
+                                                    Sign in
+                                                </Link>
+                                            </li>
+                                            <li className="mt-8 lg:p-3 lg:mt-0">
+                                                <Link to='/register' className="py-3 px-4 text-center text-white bg-gray-900  rounded-xl hover:bg-gray-600  shadow block lg:inline">
+                                                    Create free account
+                                                </Link>
+                                            </li>
+                                        </>
+                                }
+
+                            </ul>
+                        </div>
+                        <div className="flex-1">
+                            <ul className="justify-center text-gray-600 items-center space-y-8  lg:flex lg:space-x-6 lg:space-y-0">
+                                <Link className='p-3' to='/'><li>Home</li></Link>
+
+
+                                <Link to="/our-company" title="" className="p-3 "> <li>Our Company</li> </Link>
+
+                                <Link to="/our-experts" title="" className="p-3 "> <li>Our Experts</li></Link>
+
+                                <Link to="/pricing-plans" title="" className="p-3 "> <li>Pricing Plans</li> </Link>
+                                {
+                                    user?.email ?
+                                        <>
+                                            <Link className='p-3' to="/jobs"><li>Our Jobs</li></Link>
+
+                                        </> : <></>
+                                }
+                            </ul>
+                        </div>
+                    </div>
+
                 </div>
-            </div>
+            </nav>
         </div>
+
     );
 };
 
