@@ -15,7 +15,7 @@ const Header = () => {
     const navRef = useRef()
     return (
         <div>
-            <nav ref={navRef} className="bg-white fixed w-full z-20  px-4 mx-auto sm:px-6 lg:px-8">
+            <nav ref={navRef} className="bg-white shadow-sm fixed w-full z-20  px-4 mx-auto sm:px-6 lg:px-8">
                 <div className="items-center py-4 md:py-6 px-4 max-w-screen-2xl mx-auto lg:flex lg:px-8">
                     <div className="flex items-center p-3 justify-between py-3 lg:py-4 lg:block">
                         <Link to='/'>

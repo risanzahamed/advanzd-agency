@@ -28,7 +28,7 @@ const JobPost = () => {
     const saveJobPost = (category_id, job_title, job_type, location, salary, total_time, postDate, description, number, companyName, email) => {
         const jobPost = { category_id, job_title, job_type, location, salary, total_time, postDate, description, number, companyName, email }
 
-        fetch('http://localhost:8000/job-details', {
+        fetch('https://advanzd-agency-server.vercel.app/job-details', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
