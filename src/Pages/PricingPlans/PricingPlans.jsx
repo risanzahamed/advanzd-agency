@@ -5,7 +5,7 @@ const PricingPlans = () => {
     return (
         <div>
             <section class="py-10 bg-white sm:py-16 lg:py-24">
-                <div class="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
+                <div class="px-4 pt-36 mx-auto max-w-7xl sm:px-6 lg:px-8">
                     <div class="max-w-xl mx-auto text-center">
                         <h2 class="text-3xl font-bold leading-tight text-black sm:text-4xl lg:text-5xl">Pricing & Plans</h2>
                         <p class="mt-4 text-lg leading-relaxed text-gray-600">Amet minim mollit non deserunt ullam co est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit.</p>

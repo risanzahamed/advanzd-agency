@@ -4,8 +4,8 @@ import { Link } from 'react-router-dom';
 const OurCompany = () => {
     return (
         <div>
-            <section class="py-10 bg-white sm:py-16 lg:py-24">
-                <div class="max-w-5xl px-4 mx-auto sm:px-6 lg:px-8">
+            <section class="py-10  bg-white sm:py-16 lg:py-24">
+                <div class="max-w-5xl pt-36 px-4 mx-auto sm:px-6 lg:px-8">
                     <div class="mx-auto text-left  md:text-center">
                         <h2 class="text-3xl font-bold leading-tight text-black sm:text-4xl lg:text-5xl lg:leading-tight">
                             I am building a product that can

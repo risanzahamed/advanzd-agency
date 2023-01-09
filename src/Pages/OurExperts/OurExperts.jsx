@@ -4,7 +4,7 @@ const OurExperts = () => {
     return (
         <div>
             <section class="py-10 bg-gray-50 sm:py-16 lg:py-24">
-                <div class="px-4 mx-auto sm:px-6 lg:px-8 max-w-7xl">
+                <div class="px-4 pt-36 mx-auto sm:px-6 lg:px-8 max-w-7xl">
                     <div class="max-w-2xl mx-auto text-center">
                         <h2 class="text-3xl font-bold leading-tight text-black sm:text-4xl lg:text-5xl">Meet the brains</h2>
                         <p class="max-w-md mx-auto mt-4 text-base leading-relaxed text-gray-600">Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis.</p>
