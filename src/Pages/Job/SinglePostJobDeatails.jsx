@@ -3,7 +3,6 @@ import { Link, useLoaderData } from 'react-router-dom';
 
 const SinglePostJobDeatails = () => {
     const post = useLoaderData()
-    console.log(post.description);
     const { description, job_title, job_type, job_apply, location, total_time, salary } = post
     
     return (
@@ -34,18 +33,16 @@ const SinglePostJobDeatails = () => {
                             <p class="mt-4 text-base leading-relaxed text-gray-600"><span className='font-semibold'>Location:</span> {location}</p>
                             <p class="mt-4 text-base leading-relaxed text-gray-600"><span className='font-semibold'>Job Period:</span> {total_time}</p>
                             <p class="mt-4 text-base leading-relaxed text-gray-600"><span className='font-semibold'>Job Details:</span> {description}</p>
-
-                            
-                            
+                         
                             <div className='mt-6'>
-                            <Link title="" 
-                            class="inline-flex items-center justify-center px-5 py-4  text-base font-semibold text-white transition-all duration-200 rounded-md hover:opacity-90 focus:opacity-90 lg:mt-auto bg-gradient-to-r from-fuchsia-600 to-blue-600 " 
-                            role="button">
-                                Apply Now 
-                                <svg class="w-5 h-5 ml-8 -mr-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-                                    <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" />
-                                </svg>
-                            </Link>
+                                <Link title=""
+                                    class="inline-flex cursor-pointer items-center justify-center px-5 py-4  text-base font-semibold text-white transition-all duration-200 rounded-md hover:opacity-90 focus:opacity-90 lg:mt-auto bg-gradient-to-r from-fuchsia-600 to-blue-600 "
+                                    role="button">
+                                    Apply
+                                    <svg class="w-5 h-5 ml-8 -mr-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                        <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                                    </svg>
+                                </Link>
                             </div>
                         </div>
                     </div>

@@ -1,7 +1,48 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useContext, useEffect, useState } from 'react';
+import { Link, useLoaderData } from 'react-router-dom';
+import { AuthContext } from '../../Context/AuthContext';
 
 const JobPost = () => {
+
+    const { user } = useContext(AuthContext)
+    const [jobPost, setJobPost] = useState('')
+
+    const handleJobPost = event => {
+        event.preventDefault();
+        const form = event.target;
+        const job_title = form.title.value;
+        const job_type = form.jobType.value;
+        const location = form.location.value;
+        const salary = form.salary.value;
+        const total_time = form.jobPeriod.value;
+        const postDate = form.postDate.value;
+        const email = form.email.value;
+        const number = form.number.value;
+        const companyName = form.companyName.value;
+        const description = form.description.value;
+        const category_id = form.jobCategory.value;
+
+        saveJobPost(category_id, job_title, job_type, location, salary, total_time, postDate, description, number, companyName, email)
+    }
+
+    const saveJobPost = (category_id, job_title, job_type, location, salary, total_time, postDate, description, number, companyName, email) => {
+        const jobPost = { category_id, job_title, job_type, location, salary, total_time, postDate, description, number, companyName, email }
+
+        fetch('http://localhost:8000/job-details', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(jobPost)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                setJobPost(email)
+                alert("Your Job is posted successfully")
+            })
+    }
+
     return (
         <div>
             <div>
@@ -18,33 +59,33 @@ const JobPost = () => {
                                     <div class="p-6 sm:p-10">
                                         <h3 class="text-2xl font-semibold text-black">Feel free and Post Your Job Details</h3>
 
-                                        <form action="#" method="POST" class="mt-8">
+                                        <form onSubmit={handleJobPost} class="mt-8">
                                             <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-5 gap-y-4">
                                                 <div>
                                                     <label for="" class="text-base font-medium text-gray-900"> Job Title </label>
                                                     <div class="mt-2.5 relative">
-                                                        <input type="text" name="" id="" placeholder="" class="block w-full px-4 py-4 text-black placeholder-gray-500 transition-all duration-200 border border-gray-200 rounded-md bg-gray-50 focus:outline-none focus:border-blue-600 focus:bg-white caret-blue-600" />
+                                                        <input type="text" name="title" id="" placeholder="" class="block w-full px-4 py-4 text-black placeholder-gray-500 transition-all duration-200 border border-gray-200 rounded-md bg-gray-50 focus:outline-none focus:border-blue-600 focus:bg-white caret-blue-600"  />
                                                     </div>
                                                 </div>
 
                                                 <div>
                                                     <label for="" class="text-base font-medium text-gray-900"> Your email </label>
                                                     <div class="mt-2.5 relative">
-                                                        <input type="email" name="" id="" placeholder="" class="block w-full px-4 py-4 text-black placeholder-gray-500 transition-all duration-200 border border-gray-200 rounded-md bg-gray-50 focus:outline-none focus:border-blue-600 focus:bg-white caret-blue-600" />
+                                                        <input type="email" defaultValue={user?.email} name="email" id="" placeholder="" class="block w-full px-4 py-4 text-black placeholder-gray-500 transition-all duration-200 border border-gray-200 rounded-md bg-gray-50 focus:outline-none focus:border-blue-600 focus:bg-white caret-blue-600" />
                                                     </div>
                                                 </div>
 
                                                 <div>
                                                     <label for="" class="text-base font-medium text-gray-900"> Phone number </label>
                                                     <div class="mt-2.5 relative">
-                                                        <input type="tel" name="" id="" placeholder="" class="block w-full px-4 py-4 text-black placeholder-gray-500 transition-all duration-200 border border-gray-200 rounded-md bg-gray-50 focus:outline-none focus:border-blue-600 focus:bg-white caret-blue-600" />
+                                                        <input type="tel" name="number" id="" placeholder="" class="block w-full px-4 py-4 text-black placeholder-gray-500 transition-all duration-200 border border-gray-200 rounded-md bg-gray-50 focus:outline-none focus:border-blue-600 focus:bg-white caret-blue-600" required />
                                                     </div>
                                                 </div>
 
                                                 <div>
                                                     <label for="" class="text-base font-medium text-gray-900"> Your Company name </label>
                                                     <div class="mt-2.5 relative">
-                                                        <input type="text" name="" id="" placeholder="" class="block w-full px-4 py-4 text-black placeholder-gray-500 transition-all duration-200 border border-gray-200 rounded-md bg-gray-50 focus:outline-none focus:border-blue-600 focus:bg-white caret-blue-600" />
+                                                        <input type="text" name="companyName" id="" placeholder="" class="block w-full px-4 py-4 text-black placeholder-gray-500 transition-all duration-200 border border-gray-200 rounded-md bg-gray-50 focus:outline-none focus:border-blue-600 focus:bg-white caret-blue-600" required />
                                                     </div>
                                                 </div>
 
@@ -52,10 +93,10 @@ const JobPost = () => {
                                                     <label for="" class="text-base font-medium text-gray-900"> Job Description </label>
                                                     <div class="mt-2.5 relative">
                                                         <textarea
-                                                            name=""
+                                                            name="description"
                                                             id=""
                                                             placeholder=""
-                                                            class="block w-full px-4 py-4 text-black placeholder-gray-500 transition-all duration-200 border border-gray-200 rounded-md resize-y bg-gray-50 focus:outline-none focus:border-blue-600 focus:bg-white caret-blue-600"
+                                                            class="block w-full px-4 py-4 text-black placeholder-gray-500 transition-all duration-200 border border-gray-200 rounded-md resize-y bg-gray-50 focus:outline-none focus:border-blue-600 focus:bg-white caret-blue-600" required
                                                             rows="4"
                                                         ></textarea>
                                                     </div>
@@ -64,14 +105,57 @@ const JobPost = () => {
                                                 <div>
                                                     <label for="" class="text-base font-medium text-gray-900"> Job Category </label>
                                                     <div class="mt-2.5 relative">
-                                                        <input type="url" name="" id="" placeholder="For Example: Graphics Design" class="block w-full px-4 py-4 text-black placeholder-gray-500 transition-all duration-200 border border-gray-200 rounded-md resize-y bg-gray-50 focus:outline-none focus:border-blue-600 focus:bg-white caret-blue-600" />
+                                                        <select type="select" className="select border  border-gray-200 w-full max-w-xs " name="jobCategory" required>
+                                                            <option disabled selected>Pick your Job Category</option>
+                                                            <option>Web-Development</option>
+                                                            <option>Digital-Marketing</option>
+                                                            <option>Graphic-Design</option>
+                                                        </select>
+
+
+
                                                     </div>
                                                 </div>
 
                                                 <div>
-                                                    <label for="" class="text-base font-medium text-gray-900"> Your Appointment Url </label>
+                                                    <label for="" class="text-base font-medium text-gray-900">  Appointment Url </label>
                                                     <div class="mt-2.5 relative">
-                                                        <input type="url" name="" id="" placeholder="" class="block w-full px-4 py-4 text-black placeholder-gray-500 transition-all duration-200 border border-gray-200 rounded-md resize-y bg-gray-50 focus:outline-none focus:border-blue-600 focus:bg-white caret-blue-600" />
+                                                        <input type="url" name="appointment" id="" placeholder="" class="block w-full px-4 py-4 text-black placeholder-gray-500 transition-all duration-200 border border-gray-200 rounded-md resize-y bg-gray-50 focus:outline-none focus:border-blue-600 focus:bg-white caret-blue-600" required />
+                                                    </div>
+                                                </div>
+
+                                                <div>
+                                                    <label for="" class="text-base font-medium text-gray-900"> Job Type </label>
+                                                    <div class="mt-2.5 relative">
+                                                        <input type="text" name="jobType" id="" placeholder="" class="block w-full px-4 py-4 text-black placeholder-gray-500 transition-all duration-200 border border-gray-200 rounded-md resize-y bg-gray-50 focus:outline-none focus:border-blue-600 focus:bg-white caret-blue-600" required />
+                                                    </div>
+                                                </div>
+
+                                                <div>
+                                                    <label for="" class="text-base font-medium text-gray-900"> Job location </label>
+                                                    <div class="mt-2.5 relative">
+                                                        <input type="text" name="location" id="" placeholder="" class="block w-full px-4 py-4 text-black placeholder-gray-500 transition-all duration-200 border border-gray-200 rounded-md resize-y bg-gray-50 focus:outline-none focus:border-blue-600 focus:bg-white caret-blue-600" required/>
+                                                    </div>
+                                                </div>
+
+                                                <div>
+                                                    <label for="" class="text-base font-medium text-gray-900"> Salary </label>
+                                                    <div class="mt-2.5 relative">
+                                                        <input type="text" name="salary" id="" placeholder="" class="block w-full px-4 py-4 text-black placeholder-gray-500 transition-all duration-200 border border-gray-200 rounded-md resize-y bg-gray-50 focus:outline-none focus:border-blue-600 focus:bg-white caret-blue-600" required/>
+                                                    </div>
+                                                </div>
+
+                                                <div>
+                                                    <label for="" class="text-base font-medium text-gray-900"> Job Period </label>
+                                                    <div class="mt-2.5 relative">
+                                                        <input type="text" name="jobPeriod" id="" placeholder="" class="block w-full px-4 py-4 text-black placeholder-gray-500 transition-all duration-200 border border-gray-200 rounded-md resize-y bg-gray-50 focus:outline-none focus:border-blue-600 focus:bg-white caret-blue-600" required/>
+                                                    </div>
+                                                </div>
+
+                                                <div>
+                                                    <label for="" class="text-base font-medium text-gray-900"> Post Date </label>
+                                                    <div class="mt-2.5 relative">
+                                                        <input type="text" name="postDate" id="" placeholder="" class="block w-full px-4 py-4 text-black placeholder-gray-500 transition-all duration-200 border border-gray-200 rounded-md resize-y bg-gray-50 focus:outline-none focus:border-blue-600 focus:bg-white caret-blue-600" required/>
                                                     </div>
                                                 </div>
 

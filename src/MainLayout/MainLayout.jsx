@@ -3,6 +3,7 @@ import Login from "../Authentication/Login";
 import Register from "../Authentication/Register";
 import Landing from "../Landing";
 import Job from "../Pages/Job/Job";
+import JobPost from "../Pages/Job/JobPost";
 import SingleJobPost from "../Pages/Job/SingleJobPost";
 import SinglePostJobDeatails from "../Pages/Job/SinglePostJobDeatails";
 import OurCompany from "../Pages/OurCompany/OurCompany";
@@ -47,7 +48,6 @@ const router = createBrowserRouter([
           path: `/job/:id`,
           element: <PrivateRoute><SinglePostJobDeatails></SinglePostJobDeatails></PrivateRoute>,
           loader: ({ params }) => fetch(`https://advanzd-agency-server.vercel.app/post/${params.id}`)
-  
         },
 
         {

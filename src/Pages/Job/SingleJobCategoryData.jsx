@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const SingleJobCategoryData = ({ jobitem }) => {
     const { description, job_title, job_type,category_id,job_apply, location, postDate, total_time, salary, _id } = jobitem
-    console.log(jobitem);
+    
 
     const content = description.slice(0,100)
 

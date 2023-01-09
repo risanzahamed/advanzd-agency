@@ -34,7 +34,8 @@ const Job = () => {
                     </div>
                 </div>
             </section>
-            <JobPost />
+            <JobPost
+            />
         </div>
     );
 };
