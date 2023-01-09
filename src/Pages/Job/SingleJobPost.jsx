@@ -9,11 +9,11 @@ const SingleJobPost = () => {
     return (
         <div>
 
-            <div class="bg-gradient-to-b pt-36   from-[#101212] relative to-[#08201D]">
+            <div class="bg-gradient-to-b pt-14  from-[#101212] relative to-[#08201D]">
                 <section class="relative lg:min-h-[500px] pt-24 pb-10 sm:pt-32 sm:pb-16 lg:pb-24">
 
 
-                    <div class="px-4 mx-auto max-w-4xl sm:px-6 lg:px-8 relative z-20">
+                    <div class="px-4 mx-auto max-w-4xl sm:px-6 lg:px-8 relative z-10">
                         <div class=": mx-auto text-center">
                             <h1 class="text-4xl font-bold sm:text-6xl">
                                 <span class="text-transparent leading-relaxed bg-clip-text bg-gradient-to-r from-green-300 to-white"> Apply on your favorite job. </span>
