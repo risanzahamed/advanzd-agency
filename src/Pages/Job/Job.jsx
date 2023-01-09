@@ -17,7 +17,7 @@ const Job = () => {
     return (
         <div>
             <section class="py-10 text-left bg-gray-50 sm:py-16 lg:py-24">
-                <div class="px-4 mx-auto sm:px-6 lg:px-8 max-w-7xl">
+                <div class="px-4 pt-36 mx-auto sm:px-6 lg:px-8 max-w-7xl">
                     <div class="flex items-end justify-between">
                         <div class="flex-1 text-center lg:text-left">
                             <h2 class="text-3xl font-bold leading-tight text-black sm:text-4xl lg:text-5xl">Featured Job List</h2>
