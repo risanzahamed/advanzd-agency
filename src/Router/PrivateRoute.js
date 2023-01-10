@@ -8,9 +8,14 @@ const PrivateRoute = ({children}) => {
     const location = useLocation();
 
     if(loader){
-        return <div className='flex items-center justify-center w-[600px] h-[600px]'>
-            <progress className="progress w-56"></progress>
+        return <div class="grid min-h-screen place-content-center">
+
+        <div class="flex items-center gap-2 text-gray-500">
+        <span class="h-6 w-6 block rounded-full border-4 border-t-blue-300 animate-spin"></span>
+        loading...
         </div>
+    
+    </div>
     }
 
     if (user){

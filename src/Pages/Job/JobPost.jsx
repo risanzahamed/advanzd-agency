@@ -24,7 +24,7 @@ const JobPost = () => {
         const companyName = form.companyName.value;
         const description = form.description.value;
         const category_id = form.jobCategory.value;
-        const category = form.jobCategory.value;
+        // const category = form.jobCategory.value;
 
         saveJobPost(category_id, job_title, job_type, location, salary, total_time, postDate, description, number, companyName, email)
 
@@ -64,6 +64,7 @@ const JobPost = () => {
                 console.log(data);
                 setJobPost(email)
                 alert("Your Job is posted successfully")
+               
             })
 
     }
