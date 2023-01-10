@@ -16,7 +16,7 @@ const ServiceYear = () => {
                                     We Know How To Develop Business Globally
                                 </h1>
                                 <p className="mt-8 text-xl text-black">We help you to make your remote work life easier. Build a distruction free working experience.</p>
-                                <div className="grid grid-cols-1 gap-8 mt-10 text-left lg:mt-24 sm:gap-x-8 md:grid-cols-3">
+                                <div className="grid grid-cols-1 gap-8 md:text-center lg:text-left mt-10 lg:mt-24 sm:gap-x-8 md:grid-cols-3">
                                     <div>
                                         <h3 className="font-bold text-5xl">
                                             <span className="text-transparent bg-clip-text bg-[#fb5850]">
@@ -61,7 +61,7 @@ const ServiceYear = () => {
 
                             <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent"></div>
 
-                            <div className="absolute bottom-0 left-0">
+                            <div className="absolute text-left bottom-0 left-0">
                                 <div className="p-4 sm:p-6 lg:p-8">
                                     <div className="flex items-center">
                                         <svg className="w-10 h-10 text-orange-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
